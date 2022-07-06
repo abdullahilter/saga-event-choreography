@@ -1,5 +1,3 @@
-using shared;
-
 namespace api.payment;
 
 public class Program

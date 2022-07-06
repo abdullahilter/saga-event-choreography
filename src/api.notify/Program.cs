@@ -1,5 +1,3 @@
-using shared;
-
 namespace api.notify;
 
 public class Program

@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using shared;
 
 namespace api.order.Controllers;
 

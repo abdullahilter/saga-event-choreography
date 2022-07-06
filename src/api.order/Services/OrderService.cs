@@ -1,6 +1,4 @@
-﻿using shared;
-
-namespace api.order;
+﻿namespace api.order;
 
 public class OrderService : IOrderService
 {

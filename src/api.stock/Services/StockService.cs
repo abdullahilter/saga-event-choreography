@@ -1,6 +1,4 @@
-﻿using shared;
-
-namespace api.stock;
+﻿namespace api.stock;
 
 public class StockService : IStockService
 {

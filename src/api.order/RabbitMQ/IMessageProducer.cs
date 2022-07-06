@@ -1,4 +1,4 @@
-﻿namespace shared;
+﻿namespace api.order;
 
 public interface IMessageProducer
 {

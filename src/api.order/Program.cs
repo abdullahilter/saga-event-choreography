@@ -1,5 +1,3 @@
-using shared;
-
 namespace api.order;
 
 public class Program

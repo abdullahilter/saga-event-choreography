@@ -1,5 +1,3 @@
-using shared;
-
 namespace api.stock;
 
 public class Program

@@ -2,7 +2,7 @@
 using System.Text;
 using System.Text.Json;
 
-namespace shared;
+namespace api.order;
 
 public class MessageProducer : IMessageProducer
 {

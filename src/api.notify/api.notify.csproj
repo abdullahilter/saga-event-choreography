@@ -6,11 +6,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="RabbitMQ.Client" Version="6.4.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<ProjectReference Include="..\shared\shared.csproj" />
 	</ItemGroup>
 
 </Project>

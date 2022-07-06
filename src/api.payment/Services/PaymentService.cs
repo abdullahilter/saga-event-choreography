@@ -1,6 +1,4 @@
-﻿using shared;
-
-namespace api.payment;
+﻿namespace api.payment;
 
 public class PaymentService : IPaymentService
 {
