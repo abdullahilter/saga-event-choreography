@@ -1,4 +1,4 @@
-# saga-event-choreography
+# saga-event-choreography-rabbitmq
 
 ## Index
 - Docker
