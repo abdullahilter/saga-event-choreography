@@ -1,4 +1,5 @@
-﻿using RabbitMQ.Client;
+﻿using Microsoft.Extensions.Options;
+using RabbitMQ.Client;
 using System.Text;
 using System.Text.Json;
 
@@ -6,11 +7,18 @@ namespace api.payment;
 
 public class MessageProducer : IMessageProducer
 {
+    private readonly IOptions<RabbitMQOptions> _options;
+
+    public MessageProducer(IOptions<RabbitMQOptions> options)
+    {
+        _options = options;
+    }
+
     public void Publish<T>(T message, string queue)
     {
         var factory = new ConnectionFactory
         {
-            Uri = new Uri("amqp://guest:guest@localhost:5672")
+            Uri = new Uri(_options.Value.Uri)
         };
 
         var connection = factory.CreateConnection();

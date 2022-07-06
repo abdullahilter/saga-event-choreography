@@ -6,6 +6,8 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        builder.Services.Configure<RabbitMQOptions>(builder.Configuration.GetSection(nameof(RabbitMQOptions)));
+
         builder.Services.AddSingleton<IMessageProducer, MessageProducer>();
         builder.Services.AddSingleton<IStockService, StockService>();
         builder.Services.AddHostedService<PaymentReceivedMessageConsumer>();
