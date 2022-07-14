@@ -1,4 +1,5 @@
-﻿using RabbitMQ.Client;
+﻿using Microsoft.Extensions.Options;
+using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;
 using System.Text.Json;
@@ -10,14 +11,16 @@ public class PaymentReceivedMessageConsumer : BackgroundService
     private readonly IModel _channel;
     private readonly IConnection _connection;
     private readonly IStockService _stockService;
+    private readonly IOptions<RabbitMQOptions> _options;
 
-    public PaymentReceivedMessageConsumer(IStockService stockService)
+    public PaymentReceivedMessageConsumer(IStockService stockService, IOptions<RabbitMQOptions> options)
     {
         _stockService = stockService;
+        _options = options;
 
         var factory = new ConnectionFactory
         {
-            Uri = new Uri("amqp://guest:guest@localhost:5672")
+            Uri = new Uri(_options.Value.Uri)
         };
 
         _connection = factory.CreateConnection();
